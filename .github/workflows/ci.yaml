@@ -13,4 +13,7 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-ci.yaml@main
+    permissions:
+      contents: write
+      pull-requests: read
+    uses: hassio-addons/workflows/.github/workflows/app-ci.yaml@main

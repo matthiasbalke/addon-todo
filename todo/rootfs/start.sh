@@ -46,6 +46,12 @@ else
     exit 1;
 fi
 
+if bashio::config.true 'registrationEnabled'; then
+   export REGISTRATION_ENABLED=true
+else
+   export REGISTRATION_ENABLED=false
+fi
+
 export NODE_ENV="production"
 
 # Start

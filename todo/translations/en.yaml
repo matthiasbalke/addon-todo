@@ -20,3 +20,7 @@ configuration:
     name: Webauthn Relaying Party ID
     description: >-
       Must match the effective domain without protocol and port: yourdomain.com
+  registrationEnabled:
+    name: Registration enabled?
+    description: >-
+      Enable or disable the registration of new users.

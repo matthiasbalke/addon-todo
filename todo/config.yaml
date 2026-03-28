@@ -3,7 +3,7 @@
 name: "ToDo"
 slug: "todo"
 description: ""
-url: "https://github.com/matthiasbalke/todo"
+url: "https://github.com/matthiasbalke/addon-todo"
 version: "dev"
 stage: "experimental"
 

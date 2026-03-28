@@ -7,7 +7,7 @@ url: "https://github.com/matthiasbalke/todo"
 version: "dev"
 stage: "experimental"
 
-#image: "ghcr.io/matthiasbalke/addon-todo"
+image: "ghcr.io/matthiasbalke/addon-todo"
 
 init: false
 startup: services

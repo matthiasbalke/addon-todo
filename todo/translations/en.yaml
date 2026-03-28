@@ -1,0 +1,22 @@
+---
+configuration:
+  springDatasourceUrl:
+    name: Database URL
+    description: >-
+      The JDBC connection string: jdbc:postgresql://<host>:<port>/<database_name>
+  springDatasourceUsername:
+    name: Database username
+  springDatasourcePassword:
+    name: Database Password
+  jwtSecret:
+    name: JWT Secret
+    description: >-
+      JWT Secret: generate once using: openssl rand -base64 32
+  origin:
+    name: Origin for CSRF
+    description: >-
+      Must match browser URL incl. port if not default: https://yourdomain.com
+  webauthnRpId:
+    name: Webauthn Relaying Party ID
+    description: >-
+      Must match the effective domain without protocol and port: yourdomain.com

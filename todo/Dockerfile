@@ -15,7 +15,7 @@ ARG BASHIO_VERSION="v0.17.5"
 #ENV LC_CTYPE C.UTF-8
 
 # install bashio
-RUN apk --no-cache add curl=8.17.0-r1 bash=5.3.3-r1 jq=1.8.1-r0 && \
+RUN apk --no-cache add jq=1.8.1-r0 && \
     rm -rf /var/cache/apk/*
 
 RUN curl -J -L -o /tmp/bashio.tar.gz \

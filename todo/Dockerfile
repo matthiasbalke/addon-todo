@@ -4,7 +4,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-f0938af
+FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-a5fc40a
 
 ARG BASHIO_VERSION="v0.17.5"
 

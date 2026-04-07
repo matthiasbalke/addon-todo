@@ -3,3 +3,7 @@ tabWidth: 2
 singleQuote: false
 trailingComma: "none"
 proseWrap: "always"
+overrides:
+  - files: ".yamllint"
+    options:
+      parser: "yaml"

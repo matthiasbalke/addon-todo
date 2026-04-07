@@ -8,5 +8,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  workflows:
+  workflows:  # zizmor: ignore[excessive-permissions]
     uses: hassio-addons/workflows/.github/workflows/labels.yaml@main

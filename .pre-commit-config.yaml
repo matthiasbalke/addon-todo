@@ -13,7 +13,7 @@ repos:
         language: node
         additional_dependencies:
           - prettier@3.8.1
-        types_or: [yaml, json, markdown]
+        types_or: [json, markdown]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0

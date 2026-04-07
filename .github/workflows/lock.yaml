@@ -8,5 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  workflows:  # zizmor: ignore[excessive-permissions]
+  workflows:
+    # zizmor: ignore[excessive-permissions]
     uses: hassio-addons/workflows/.github/workflows/lock.yaml@main

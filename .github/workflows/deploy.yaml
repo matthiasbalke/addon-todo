@@ -6,14 +6,16 @@ on:
   release:
     types:
       - published
-  workflow_run:  # zizmor: ignore[dangerous-triggers]
+  # zizmor: ignore[dangerous-triggers]
+  workflow_run:
     workflows: ["CI"]
     branches: [main]
     types:
       - completed
 
 jobs:
-  workflows:  # zizmor: ignore[excessive-permissions]
+  workflows:
+    # zizmor: ignore[excessive-permissions]
     uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
     secrets:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}

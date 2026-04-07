@@ -1,0 +1,40 @@
+name: Update Base Image
+
+on:
+  repository_dispatch:
+    types:
+      - update
+
+permissions:
+  contents: write
+
+jobs:
+  update-base-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract sha tag
+        id: extract-tag
+        env:
+          TAGS: ${{ toJson(github.event.client_payload.tags) }}
+        run: |
+          SHA_TAG=$(echo "$TAGS" | jq -r '.[] | select(startswith("sha-"))')
+          if [ -z "$SHA_TAG" ]; then
+            echo "No sha-* tag found in payload"
+            exit 1
+          fi
+          echo "sha_tag=${SHA_TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Update Dockerfile
+        run: |
+          sed -i "s|FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-[a-zA-Z0-9]*|FROM ghcr.io/matthiasbalke/todo/all-in-one:${{ steps.extract-tag.outputs.sha_tag }}|" todo/Dockerfile
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add todo/Dockerfile
+          git diff --staged --quiet || git commit -m "chore: update base image to ${{ steps.extract-tag.outputs.sha_tag }}"
+          git push

@@ -83,4 +83,4 @@ SOFTWARE.
 [issue]: https://github.com/matthiasbalke/addon-todo/issues
 [matthiasbalke]: https://github.com/matthiasbalke
 [contributors]: https://github.com/matthiasbalke/addon-todo/graphs/contributors
-[installations-shield-stable]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fanalytics.home-assistant.io%2Faddons.json&query=%24%5B%22d8ac6820_todo%22%5D.total&label=Reported%20Installations&link=https%3A%2F%2Fanalytics.home-assistant.io/add-ons
+[installations-shield-stable]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fanalytics.home-assistant.io%2Faddons.json&query=%24%5B%2295229e99_todo%22%5D.total&label=Reported%20Installations&link=https%3A%2F%2Fanalytics.home-assistant.io/add-ons

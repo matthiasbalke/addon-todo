@@ -2,7 +2,7 @@
   "name": "Example devcontainer for add-on repositories",
   "image": "ghcr.io/home-assistant/devcontainer:2-addons",
   "appPort": ["7123:8123", "7357:4357"],
-  "postStartCommand": "bash devcontainer_bootstrap",
+  "postStartCommand": "bash devcontainer_bootstrap && pre-commit install",
   "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
   "containerEnv": {
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"

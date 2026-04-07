@@ -36,6 +36,31 @@ Got questions?
 
 Feel free to [open an issue here][issue] on GitHub.
 
+## Contributing
+
+### Pre-commit hooks
+
+This repository uses [pre-commit](https://pre-commit.com/) to enforce code quality checks before each commit. The following hooks are configured:
+
+- **yamllint** — lints YAML files against `.yamllint`
+- **prettier** — formats YAML, JSON, and Markdown files
+- **check-json** — validates JSON syntax
+- **shellcheck** — lints shell scripts
+- **zizmor** — security audit of GitHub Actions workflows
+
+**One-time setup:**
+
+```sh
+pip install pre-commit
+pre-commit install
+```
+
+To run all hooks manually against all files:
+
+```sh
+pre-commit run --all-files
+```
+
 ## Authors & contributors
 
 The original setup of this repository is by [Matthias Balke][matthiasbalke].

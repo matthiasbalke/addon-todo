@@ -3,7 +3,8 @@ configuration:
   springDatasourceUrl:
     name: Database URL
     description: >-
-      The JDBC connection string: jdbc:postgresql://<host>:<port>/<database_name>
+      The JDBC connection string:
+      jdbc:postgresql://<host>:<port>/<database_name>
   springDatasourceUsername:
     name: Database username
   springDatasourcePassword:

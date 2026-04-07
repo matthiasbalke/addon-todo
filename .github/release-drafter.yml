@@ -1,10 +1,10 @@
 ---
 categories:
-  - title: '🚀 Features'
-    label: 'new-feature'
-  - title: '🐛 Bug Fixes'
+  - title: "🚀 Features"
+    label: "new-feature"
+  - title: "🐛 Bug Fixes"
     labels:
-      - 'bugfix'
+      - "bugfix"
 template: |
   ## What’s Changed
 

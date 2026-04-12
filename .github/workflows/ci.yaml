@@ -11,18 +11,9 @@ on:
       - reopened
       - synchronize
   workflow_dispatch:
-  # zizmor: ignore[dangerous-triggers]
-  workflow_run:
-    workflows: ["Update Base Image"]
-    types:
-      - completed
-    branches: [main]
 
 jobs:
   workflows:
-    if:
-      ${{ github.event_name != 'workflow_run' ||
-      github.event.workflow_run.conclusion == 'success' }}
     permissions:
       actions: read
       packages: read

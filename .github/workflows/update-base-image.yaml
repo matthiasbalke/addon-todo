@@ -38,7 +38,7 @@ jobs:
           SHA_TAG: ${{ steps.extract-tag.outputs.sha_tag }}
         run: |
           sed -i \
-            "s|FROM ghcr.io/matthiasbalke/todo/all-in-one:[-a-zA-Z0-9]*|FROM ghcr.io/matthiasbalke/todo/all-in-one:${SHA_TAG}|" \
+            "s|FROM ghcr.io/matthiasbalke/todo/all-in-one:[-.a-zA-Z0-9]*|FROM ghcr.io/matthiasbalke/todo/all-in-one:${SHA_TAG}|" \
             todo/Dockerfile
 
       - name: Commit and push

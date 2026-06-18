@@ -4,7 +4,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-FROM ghcr.io/matthiasbalke/todo/all-in-one:0.1.0
+FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-a536109
+
+# install additional packages first
+USER root
 
 ARG BASHIO_VERSION="v0.17.5"
 
@@ -28,6 +31,10 @@ RUN curl -J -L -o /tmp/bashio.tar.gz \
     && mv /tmp/bashio/lib /usr/lib/bashio \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     && rm -f -r /tmp/*
+
+# user: nonroot 65532
+# user: nobody  65534
+USER 65532:65532
 
 # Copy root filesystem
 COPY rootfs /

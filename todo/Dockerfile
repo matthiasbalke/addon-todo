@@ -6,9 +6,6 @@
 
 FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-3674a19
 
-# install additional packages first
-USER root
-
 ARG BASHIO_VERSION="v0.17.5"
 
 # Set shell
@@ -31,10 +28,6 @@ RUN curl -J -L -o /tmp/bashio.tar.gz \
     && mv /tmp/bashio/lib /usr/lib/bashio \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     && rm -f -r /tmp/*
-
-# user: nonroot 65532
-# user: nobody  65534
-USER 65532:65532
 
 # Copy root filesystem
 COPY rootfs /

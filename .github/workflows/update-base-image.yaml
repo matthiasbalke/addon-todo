@@ -17,7 +17,7 @@ jobs:
       - uses: actions/create-github-app-token@v3
         id: app-token
         with:
-          app-id: ${{ vars.MATTHIASBALKE_TODO_BOT_APP_ID }}
+          client-id: ${{ vars.MATTHIASBALKE_TODO_BOT_APP_ID }}
           private-key: ${{ secrets.MATTHIASBALKE_TODO_BOT_APP_PRIVATE_KEY }}
           permission-contents: write
 
@@ -52,8 +52,8 @@ jobs:
         env:
           SHA_TAG: ${{ steps.extract-tag.outputs.sha_tag }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "matthiasbalke-todo-bot"
+          git config user.email "matthiasbalke-todo-bot@users.noreply.github.com"
           git add todo/Dockerfile
           git diff --staged --quiet || git commit -m "chore: update base image to ${SHA_TAG}"
           git push

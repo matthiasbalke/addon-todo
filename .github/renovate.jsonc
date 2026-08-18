@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    // support for apk versioning annotations
+    "customManagers:dockerfileVersions"
+  ],
+  // https://github.com/homeassistant-apps/app-cloudflared/blob/main/.github/renovate.json
+  // rebasing is required to merge PRs into main
+  "rebaseWhen": "behind-base-branch",
+  "dependencyDashboard": true,
+  // label dependency updates nicely
+  "labels": ["dependencies", "no-stale"],
+  "commitMessagePrefix": "⬆️"
+}

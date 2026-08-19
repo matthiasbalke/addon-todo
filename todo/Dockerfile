@@ -7,7 +7,7 @@
 FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-5a202b8
 
 # renovate: datasource=github-releases depName=bashio packageName=hassio-addons/bashio versioning=loose
-ARG BASHIO_VERSION="v0.17.5"
+ARG BASHIO_VERSION="v0.19.0"
 
 # Set shell
 #SHELL ["/bin/bash", "-o", "pipefail", "-c"]

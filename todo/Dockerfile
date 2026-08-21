@@ -24,7 +24,7 @@ ARG CURL_VERSION="8.20.0-r1"
 ARG BASH_VERSION="5.3.3-r1"
 
 # renovate: datasource=repology depName=jq packageName=alpine_3_23/jq versioning=loose
-ARG JQ_VERSION="1.8.1_git20260429-r1"
+ARG JQ_VERSION="1.8.1-r0"
 
 RUN apk --no-cache add \
     curl=${CURL_VERSION} \

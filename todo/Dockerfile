@@ -4,7 +4,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-b6f140b
+FROM ghcr.io/matthiasbalke/todo/all-in-one:sha-a756e0b
 
 # renovate: datasource=github-releases depName=bashio packageName=hassio-addons/bashio versioning=loose
 ARG BASHIO_VERSION="v0.19.0"

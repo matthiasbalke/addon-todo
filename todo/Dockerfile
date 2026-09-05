@@ -18,7 +18,7 @@ ARG BASHIO_VERSION="v0.19.0"
 # install bashio
 
 # renovate: datasource=repology depName=curl packageName=alpine_3_23/curl versioning=loose
-ARG CURL_VERSION="8.20.0-r1"
+ARG CURL_VERSION="8.22.0-r0"
 
 # renovate: datasource=repology depName=bash packageName=alpine_3_23/bash versioning=loose
 ARG BASH_VERSION="5.3.3-r1"

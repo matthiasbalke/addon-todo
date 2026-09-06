@@ -26,32 +26,6 @@ categories:
     when:
       conventional:
         type: 'feat'
-  - title: '🐛 Bug Fixes'
-    semver-increment: 'patch'
-    exclusive: true
-    when:
-      conventional:
-        type: 'fix'
-  - title: '📚 Documentation'
-    semver-increment: 'patch'
-    exclusive: true
-    when:
-      conventional:
-        type: 'docs'
-  - title: '🧰 Maintenance'
-    semver-increment: 'patch'
-    exclusive: true
-    when:
-      conventional:
-        types:
-          - 'build'
-          - 'chore'
-          - 'ci'
-          - 'perf'
-          - 'refactor'
-          - 'revert'
-          - 'style'
-          - 'test'
   - title: '⬆️ Dependency Updates'
     semver-increment: 'patch'
     exclusive: true
@@ -66,6 +40,32 @@ categories:
           - 'ci'
           - 'fix'
     collapse-after: 5
+  - title: '🐛 Bug Fixes'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        type: 'fix'
+  - title: '🧰 Maintenance'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        types:
+          - 'build'
+          - 'chore'
+          - 'ci'
+          - 'perf'
+          - 'refactor'
+          - 'revert'
+          - 'style'
+          - 'test'
+  - title: '📚 Documentation'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        type: 'docs'
   - title: 'Other changes'
   - type: 'pre-exclude'
     when:

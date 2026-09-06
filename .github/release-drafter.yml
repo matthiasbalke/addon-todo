@@ -3,8 +3,8 @@ include-pre-releases: true
 name-template: 'v$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 replacers:
-  - search: '/(chore\(app\)\: Update )(todo)(.+)/g'
-    replace: '$1[$2](https://github.com/matthiasbalke/todo)$3'
+  - search: '/(chore\(app\)\: Update )(todo)( to v)(\d+\.\d+.\d+)/g'
+    replace: '$1[$2](https://github.com/matthiasbalke/todo)$3[$4](https://github.com/matthiasbalke/todo/releases/tag/$4)'
 template: |
   # What's Changed
 

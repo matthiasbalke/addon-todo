@@ -22,7 +22,6 @@ jobs:
           private-key: ${{ secrets.MATTHIASBALKE_TODO_BOT_APP_PRIVATE_KEY }}
           permission-contents: write
           permission-pull-requests: write
-          permission-organization-projects: write
 
       - name: Checkout
         # v6.0.2
@@ -108,7 +107,6 @@ jobs:
               --head "${BRANCH_NAME}" \
               --title "${PR_TITLE}" \
               --label "maintenance" \
-              --project "ToDo" \
               --body "Automated update of the todo base image to ${IMAGE_TAG}."
 
             PR_NUMBER=$(gh pr list \

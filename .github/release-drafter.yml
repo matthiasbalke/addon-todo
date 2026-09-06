@@ -1,11 +1,72 @@
 ---
-categories:
-  - title: "🚀 Features"
-    label: "new-feature"
-  - title: "🐛 Bug Fixes"
-    labels:
-      - "bugfix"
+include-pre-releases: true
+name-template: 'v$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
 template: |
-  ## What’s Changed
+  # What's Changed
 
   $CHANGES
+
+  ## New Contributors
+
+  $NEW_CONTRIBUTORS
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+categories:
+  - title: '🚨 Breaking Changes'
+    semver-increment: 'major'
+    exclusive: true
+    when:
+      conventional:
+        breaking: true
+  - title: '✨ Features'
+    semver-increment: 'minor'
+    exclusive: true
+    when:
+      conventional:
+        type: 'feat'
+  - title: '🐛 Bug Fixes'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        type: 'fix'
+  - title: '📚 Documentation'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        type: 'docs'
+  - title: '🧰 Maintenance'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        types:
+          - 'build'
+          - 'chore'
+          - 'ci'
+          - 'perf'
+          - 'refactor'
+          - 'revert'
+          - 'style'
+          - 'test'
+  - title: '⬆️ Dependency Updates'
+    semver-increment: 'patch'
+    exclusive: true
+    when:
+      conventional:
+        scopes:
+          - 'deps'
+          - 'deps-dev'
+        types:
+          - 'build'
+          - 'chore'
+          - 'ci'
+          - 'fix'
+    collapse-after: 5
+  - title: 'Other changes'
+  - type: 'pre-exclude'
+    when:
+      label: 'skip-changelog'

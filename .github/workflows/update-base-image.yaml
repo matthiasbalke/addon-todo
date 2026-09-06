@@ -103,6 +103,8 @@ jobs:
               --base "${BASE_BRANCH}" \
               --head "${BRANCH_NAME}" \
               --title "${PR_TITLE}" \
+              --label "maintenance" \
+              --project "ToDo" \
               --body "Automated update of the todo base image to ${IMAGE_TAG}."
 
             PR_NUMBER=$(gh pr list \

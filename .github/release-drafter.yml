@@ -21,10 +21,10 @@ categories:
     exclusive: true
     when:
       conventional:
-        - types:
-            - 'chore'
-        - scopes:
-            - 'app'
+        types:
+          - 'chore'
+        scopes:
+          - 'app'
   - title: '🚨 Breaking Changes'
     semver-increment: 'major'
     exclusive: true

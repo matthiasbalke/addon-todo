@@ -56,6 +56,9 @@ jobs:
           BRANCH_NAME="chore/update-base-image/${IMAGE_TAG}"
 
           git fetch origin "${BASE_BRANCH}" --depth=1
+          git fetch origin \
+            "refs/heads/${BRANCH_NAME}:refs/remotes/origin/${BRANCH_NAME}" \
+            --depth=1 || true
           git switch -C "${BRANCH_NAME}" "origin/${BASE_BRANCH}"
 
           echo "BRANCH_NAME=${BRANCH_NAME}" >> "$GITHUB_ENV"

@@ -2,6 +2,9 @@
 include-pre-releases: true
 name-template: 'v$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
+replacers:
+  - search: '/(chore\(app\)\: Update )(todo)(.+)/g'
+    replace: '$1[$2](https://github.com/matthiasbalke/todo)$3'
 template: |
   # What's Changed
 
@@ -14,6 +17,14 @@ template: |
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 
 categories:
+  - title: '📅 Todo'
+    exclusive: true
+    when:
+      conventional:
+        - types:
+            - 'chore'
+        - scopes:
+            - 'app'
   - title: '🚨 Breaking Changes'
     semver-increment: 'major'
     exclusive: true

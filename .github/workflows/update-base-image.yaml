@@ -22,6 +22,7 @@ jobs:
           private-key: ${{ secrets.MATTHIASBALKE_TODO_BOT_APP_PRIVATE_KEY }}
           permission-contents: write
           permission-pull-requests: write
+          permission-repository-projects: write
 
       - name: Checkout
         # v6.0.2
